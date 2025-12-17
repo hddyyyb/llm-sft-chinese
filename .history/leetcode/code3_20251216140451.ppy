@@ -1,0 +1,62 @@
+'''Amazon is launching a revolutionary performance monitoring feature that incorporates an advanced analytics program, adept at identifying and tracking potential bottlenecks. This framework manages n active processes, each with a unique Process ldentifie(PID).
+The analytics program evaluates the overall system efficiency of the platform using a specialized algorithm.
+The algorithm analyzes contiguous subarrays of Process Identifiers (PlDs) represented by the array process_id.
+For each subarray, it calculates the sum of the PiDs and divides this sum by a constant divisor.
+The remainder obtained from this division is compared to the number of processes in the subarray.
+A subarray is flagged if the remainder equals the number of processes within it and is considered as inefficient.
+The overall system efficiency risk is determined by the total count of such flagged subarrays.
+Formally, qiven an array process_id of size n, representing the PlDs of the processes running on the platform, and an integer divisor, with which remainder has to be checked. The task is to calculate the system's efficiency risk level.
+Note:
+Remainder is defined as the remaining part after performing the division. For example, the remainder of 13 with 5 is 3.
+A subarray is a continuous portion of an array. For example, in the array [5, 7, 9, 11] possible subarrays include [5 ,7], [7, 9, 11], [11] etc. Note that a subarray maintains the original order of elements and consists of consecutive elements.
+Example
+n=4
+process_id =[1, 3, 2, 4]
+divisor = 4
+
+There are 2 different inefficient contiguous subarrays:
+1. Subarray from index [O, O] with process_id given by: [1], the remainder of the sum of process_id (sum = l) of the subarray [1] with divisor = 4 is 1 (the remainder of 1 with 4 is l), which is equal to the number of elements in the subarray, i.e., 1. Hence, this subarray is flagged.
+2.Subarray from index [2, 3] with process_id given by: [2, 4l, the remainder of the sum of process_id (sum = 2 + 4 = 6) of the subarray with divisor = 4 is 2, which is equal to the number of elements in the subarray, i.e., 2. Hence, this subarray is flagged.
+
+An example of a contiguous subarray is which is not flagged:
+Subarray from index [O, 1] with process_id given by: [3, 2] is not flagged because the remainder of the sum of PlDs=3+2=5, whose remainder with divisor = 4, is 1, while there are 2 elements in the subarray. Hence, the subarray is not inefficient.
+
+Hence, the overall efficiency risk of the system is 2. Thus, return 2 from the function.
+
+Function Description
+Complete the function calculateEfficiencyRisk in the editor below.
+
+calculateEfficiencyRisk has the following parameters:
+int process_id[n]: an array of integers denoting the PIDs of the processes
+int divisor: an integer with which the remainder is checked
+
+Returns
+long: an integer denoting the overall efficiency risk of the system
+
+Constraints
+1≤n≤2*10^5
+1≤process_idli] ≤ 10^9
+1≤ divisor ≤ 10^9
+
+Input Format For Custom Testing
+The first line contains an integer, n, denoting the number of elements in process_id.
+Each of the next n lines contains an integer representing process_id[i].
+The last line line contains an integer, divisor.
+
+用如下python模板编写代码：
+def calculateEfficiencyRisk(process_id,divisor):
+#Write your code here
+if __name__ == 'main'：
+  fptr= open(os.environ['OUTPUT PATH’].’w‘)
+  process_id_count =int(input.strip())
+  process_id = []
+  for _ in range(process_id_count):
+    process_id_item = int(input().strip())
+    process_id.append(process_id_item) 
+
+  divisor=int(input().strip())
+  result = calculateEfficiencyRisk(process_id,divisor)
+  fptr.write(str(result)+'\n')
+  fptr.close()'''
+
+
